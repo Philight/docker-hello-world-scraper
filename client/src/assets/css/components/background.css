@@ -1,0 +1,19 @@
+
+
+
+.background__container {
+    z-index: -1;
+
+}
+
+.background__picture {
+    background: url(https://img.freepik.com/premium-photo/wooden-purple-texture-old-weathered-wood-violet-background-from-planks-pink_100800-14736.jpg?w=2000) no-repeat center;
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+}
+
+.background__overlay {
+    background: #000;
+    opacity: 0.2;
+}

@@ -1,0 +1,104 @@
+:root {
+  --purple-1: rgb(87 36 232); /* #5724e8 */
+
+/* 
+  COLOR SETTINGS
+*/
+  --primary-color: var(--purple-1);
+
+/* FONTS */
+  --font-courier-1: 'Courier New';
+  --font-courier-2: 'Courier New Sans';
+/* 
+  FONT SETTINGS
+*/
+  --primary-font: var(--font-courier-1);
+
+  --page-padding-h: 40px;
+  --page-padding-v: 50px;
+
+  --header-height: 40px;
+  --pagination-height: 20px;
+
+}
+
+body {
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+  margin: 0; padding: 0;
+  width: 100%;
+  font-family: var(--primary-font), 'Times New Roman';
+}
+
+figure, h1, h2, h3, h4, h5, p, ul, li {
+  margin: 0;
+}
+
+ul, li {
+  padding: 0;
+}
+
+ul {
+  list-style: none;
+}
+
+canvas {
+  width: 100px;
+  height: 100px;
+}
+
+img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+button {
+  font-family: var(--primary-font), 'Times New Roman';
+}
+
+.page-padding {
+  padding: var(--page-padding-v) var(--page-padding-h);
+  margin: auto;
+}
+
+.flex-col {
+  display: flex;
+  flex-direction: column;
+}
+
+.flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.flex-center-h {
+  display: flex;
+  justify-content: center;
+}
+
+.flex-center-v {
+  display: flex;
+  align-items: center;
+}
+
+.absolute-center {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+}
+
+.image-wrapper {
+  display: inline-flex;
+  width: 100%;
+  height: 100%;
+}
+
+.loader__container{
+  width: 100vw;
+  height: 100vh;
+}

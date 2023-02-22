@@ -1,0 +1,26 @@
+{
+  "name": "luxonis-scraper",
+  "version": "1.0.0",
+  "description": "Scraping Reality",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start-server": "nodemon --delay 4000ms --legacy-watch --verbose server.js",
+    "kill": "kill -9 $(lsof -t -i:$(grep '^PORT' .env | cut -d '=' -f2 | tr -d '\\n\\r'))"
+  },
+  "author": "Filip Lai",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "got": "^11.8.3",
+    "open": "^8.4.2",
+    "path": "^0.12.7",
+    "pg": "^8.9.0",
+    "puppeteer": "^19.2.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.20"
+  }
+}

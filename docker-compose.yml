@@ -1,0 +1,59 @@
+version: '3'
+#env_file: 
+#  - /server/.env
+services:
+  react-ui:
+    container_name: react-ui
+    build:
+      context: ./client
+    ports:
+      - "8080:8080"
+    stdin_open: true
+    volumes:
+#      - ./c/WORKSPACE/WEB/luxonis/luxonis-scraper-win/client:/client
+      - ./client:/client
+      - /c/WORKSPACE/WEB/luxonis/luxonis-scraper-win/client/node_modules/
+        
+  nodejs-server:
+    container_name: node-server
+    depends_on:
+      # Our app does not work without our database
+      # so this ensures our database is loaded first
+      - postgres-db   
+    build:
+      context: ./server
+    ports:
+      - "5000:5000"
+
+    volumes:
+#       - ./c/WORKSPACE/WEB/luxonis/luxonis-scraper-win/server:/server
+       - ./server:/server
+       - /c/WORKSPACE/WEB/luxonis/luxonis-scraper-win/server/node_modules/
+
+  postgres-db:
+    container_name: postgres
+    restart: always    
+    image: postgres:15.2-bullseye
+#    image: postgres:15-alpine
+#    image: postgres:14.7-bullseye
+#    image: postgres:14-alpine
+    ports:
+#      - '5433:5432'
+      - '5432:5432'
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=luxonis22
+      - POSTGRES_DB=postgres  
+    volumes:
+      # When the PostgresSQL container is started it will run any scripts
+      # provided in the `docker-entrypoint-initdb.d` directory, this connects
+      # our seed file to that directory so that it gets run      
+#      - .'C:/Program Files/PostgreSQL/15/data':/var/lib/postgresql/data   
+#      - db:/var/lib/postgresql/data   
+#      - ./c/WORKSPACE/WEB/luxonis/luxonis-scraper-win/server/database/init.sql:/docker-entrypoint-initdb.d/init.sql
+      - ./server/src/database/init.sql:/docker-entrypoint-initdb.d/init.sql
+
+
+#volumes:
+#  db:
+#    driver: local

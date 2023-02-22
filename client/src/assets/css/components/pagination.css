@@ -1,0 +1,29 @@
+
+
+
+.pagination__container {
+    box-sizing: border-box;
+
+    position: absolute;
+    bottom: calc(var(--page-padding-v) / 4);
+    left: 50%;
+    transform: translateX(-50%);
+
+    --page-dot-color: #c1c1c1;
+    --page-dot-color: var(--primary-color);
+}
+
+.pagination__container .circle__container {
+    border: 1.4px solid var(--page-dot-color);
+    border-radius: 100px;
+    width: 10px; height: 10px;
+    margin: 0 2px;
+
+    background-color: transparent;
+    transition: background-color 0.3s ease;
+    cursor: pointer;
+}
+
+.pagination__container .circle__container.filled {
+    background-color: var(--page-dot-color);
+}
