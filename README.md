@@ -13,8 +13,8 @@
 
 
 ## 📺 DEMO
-![](https://github.com/Philight/luxonis-scraper-win/blob/master/preview/server.png)
-![](https://github.com/Philight/luxonis-scraper-win/blob/master/preview/client.png)
+![](https://github.com/Philight/luxonis-scraper-win/blob/main/preview/server.png)
+![](https://github.com/Philight/luxonis-scraper-win/blob/main/preview/client.png)
 
 
 ## ⚙️ AVAILABLE SCRIPTS
